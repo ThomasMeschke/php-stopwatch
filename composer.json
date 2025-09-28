@@ -1,0 +1,35 @@
+{
+    "name": "thomasmeschke/php-stopwatch",
+    "version": "0.1.0",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "thomasmeschke\\phpstopwatch\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "thomasmeschke\\phpstopwatch\\tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Thomas Meschke",
+            "email": "thomas.meschke@googlemail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^12.3",
+        "friendsofphp/php-cs-fixer": "^3.88"
+    },
+    "scripts": {
+        "test": "@unittest",
+        "unittest": "phpunit -c tests/phpunit.xml --exclude-testsuite usage",
+        "usagetest": "phpunit -c tests/phpunit.xml --testsuite usage",
+        "stan": "phpstan analyze -c .phpstan.neon",
+        "format": "php-cs-fixer fix src"
+    }
+}
